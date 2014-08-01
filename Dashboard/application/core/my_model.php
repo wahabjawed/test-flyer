@@ -16,7 +16,8 @@ class MY_Model extends CI_Model {
      * Update record.
      */
     private function update() {
-        $this->db->update($this::DB_TABLE, $this, $this::DB_TABLE_PK);
+		
+        $this->db->update($this::DB_TABLE, $this, array($this::DB_TABLE_PK=>$this->{$this::DB_TABLE_PK}));
     }
     
     /**
@@ -35,7 +36,7 @@ class MY_Model extends CI_Model {
      */
     public function load($id) {
         $query = $this->db->get_where($this::DB_TABLE, array(
-            $this::DB_TABLE_PK => $id,
+            $this::DB_TABLE_PK => $id
         ));
         $this->populate($query->row());
     }

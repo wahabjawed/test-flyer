@@ -49,8 +49,8 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'testflyer';
-$db['default']['password'] = 'testflyer!';
+$db['default']['username'] = 'foodapplication';
+$db['default']['password'] = 'Hemani786!';
 $db['default']['database'] = 'testflyer';
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';
