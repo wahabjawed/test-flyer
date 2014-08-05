@@ -19,7 +19,7 @@
                     <li><a href='<?php echo base_url('')?>'>Home</a></li>
                    
 					 <li><a href='<?php echo base_url('index.php/data/')?>'>Data Collected</a></li>
-					 <li><a href='<?php echo base_url('index.php/data/statistics')?>'>Statistics</a></li>
+					<!-- <li><a href='<?php echo base_url('index.php/data/statistics')?>'>Statistics</a></li> -->
                      <li><a href='<?php echo base_url('index.php/data/performance')?>'>User Performance</a></li>
                       <li><a href='<?php echo base_url('index.php/user/')?>'>User Management</a></li>
                 </ul>

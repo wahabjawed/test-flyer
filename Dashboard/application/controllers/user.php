@@ -12,8 +12,16 @@ class User extends CI_Controller {
 		  
 		$user_array = array();
         $this->load->model('Users');
+		if ($this->input->server('REQUEST_METHOD') === 'POST')
+        {
+		$match=$this->input->post('searchTerm');	
+		$array = array('username' => $match, 'name' => $match, 'email' => $match);
+		$users = $this->Users->search($array);
+		//echo $this->db->last_query();
+		}else{
 		$users = $this->Users->get();
-        foreach ($users as $user) {
+        }
+		foreach ($users as $user) {
                 $user_array[] = array(
                 $user->user_id,
                 $user->username,
@@ -28,6 +36,8 @@ class User extends CI_Controller {
 	        $this->load->view('header/footer');
     }
     
+	
+	
    
   public function delete($user_id){
 	   

@@ -17,5 +17,6 @@ class DataT extends MY_Model {
 	public $havesystem;
 	public $cdate;
 	public $datauserid;
-    
+    public $rate;
+	public $systemquote;
 }

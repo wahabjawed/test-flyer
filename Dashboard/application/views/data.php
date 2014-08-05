@@ -24,7 +24,7 @@ function resets(){
 	
 </script>
   
-     <form name="search-form" id="search-form" class="form-inline" role="form" enctype="multipart/form-data" method="post" action="user_management.php">
+     <form name="search-form" id="search-form" class="form-inline" role="form" enctype="multipart/form-data" method="post" action="<?php echo base_url('index.php/data/')?>">
       <div class="form-group">
         <label class="sr-only" for="searchTerm">Search Term</label>
         <input type="text" class="form-control" id="searchTerm" name= "searchTerm" placeholder="Enter Search Term">
@@ -41,7 +41,7 @@ function resets(){
 	   $tmpl = array ( 'table_open'  => '<table class="table table-bordered">' );
 
 $this->table->set_template($tmpl);
-       $this->table->set_heading('#', 'Name', 'Tel', 'Address','City','Zip Code','Email','Interest','System','Date','User','Action');
+       $this->table->set_heading('#', 'Name', 'Tel', 'Address','City','Zip Code','Email','Interest','System','Rate','SystemQ','Next Date','User','Action');
 echo $this->table->generate($data);
        ?>
          </form>

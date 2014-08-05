@@ -15,7 +15,7 @@
           <div class="form-group">
             <label for="inputFName" class="col-sm-2 control-label">Name</label>
             <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputName" name="inputName"  value= "<?php echo $data->name; ?> " required>
+            <input type="text" class="form-control" id="inputName" name="inputName"  value= "<?php echo $data->name ?> " required>
 			  
             </div>
           </div>
@@ -76,8 +76,28 @@
           </div>
           
           
+           <div class="form-group">
+            <label for="inputCity" class="col-sm-2 control-label">Rate Quoted</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputRate" name="inputRate" value= <?php echo $data->rate; ?> required>
+            </div>
+          </div>
+          
+            <div class="form-group">
+            <label class="col-sm-2 control-label">System Quoted</label>
+            <div class="col-sm-10">
+              <select class="form-control" id="inputSystemQuote" name="inputSystemQuote" required>
+              <option value="Lynx" <?PHP echo ($data->systemquote=='Lynx'?'selected':''); ?>>Lynx</option>
+              <option value="Simon" <?PHP echo ($data->systemquote=='Simon'?'selected':''); ?>>Simon</option>
+              <option value="2gig" <?PHP echo ($data->systemquote=='2gig'?'selected':''); ?>>2gig</option>
+              <option value="DSC" <?PHP echo ($data->systemquote=='DSC'?'selected':''); ?>>DSC</option>
+              <option value="Hardwired" <?PHP echo ($data->systemquote=='Hardwired'?'selected':''); ?>>Hardwired</option>
+               </select>
+            </div>
+          </div>
+          
               <div class="form-group">
-            <label for="inputCity" class="col-sm-2 control-label">Date</label>
+            <label for="inputCity" class="col-sm-2 control-label">Next Contact Date</label>
             <div class="col-sm-10">
               <input type="Date" class="form-control" id="inputDate" name="inputDate" value= <?php echo $data->cdate; ?> required>
             </div>

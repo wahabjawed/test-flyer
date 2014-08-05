@@ -12,7 +12,17 @@ class Data extends CI_Controller {
 		  
 		$data_array = array();
         $this->load->model(array('DataT','Users'));
+		if ($this->input->server('REQUEST_METHOD') === 'POST')
+        {
+		$match=$this->input->post('searchTerm');	
+		$array = array('name' => $match, 'tel' => $match, 'address' => $match, 'systemquote' => $match, 'email' => $match, 'cdate' => $match, 'city' => $match);
+		$datat = $this->DataT->search($array);
+		//echo $this->db->last_query();
+		}else{
 		$datat = $this->DataT->get();
+        }
+		
+		
         foreach ($datat as $data) {
 			
 			  $user = new Users();
@@ -27,6 +37,8 @@ class Data extends CI_Controller {
 				$data->email,
 				$data->interest,
 				$data->havesystem,
+				$data->rate,
+				$data->systemquote,
 				$data->cdate,
 				$user->username,
 					anchor('data/update/'.$data->data_id,'Update')." ".anchor('data/delete/'.$data->data_id,'Delete', array('onClick' => "return deleteConfirm($data->data_id);"))
@@ -35,15 +47,19 @@ class Data extends CI_Controller {
         $this->load->view('data', array(
             'data' => $data_array,
         ));
-		  
-		  
-		  
-		    
-		  
+
 		   
         $this->load->view('header/footer');
     }
-    
+
+    public function performance(){
+
+        $this->load->view('header/header');
+        $this->load->view('header/nav');
+        $this->load->view('performance');
+        $this->load->view('header/footer');
+    }
+
 public function delete($data_id){
 	   
 	  $this->load->model('DataT');
@@ -107,6 +123,8 @@ public function delete($data_id){
 		$datats->havesystem = $this->input->post('inputSystem');
 		$datats->cdate = $this->input->post('inputDate');
 		$datats->zipcode = $this->input->post('inputZip');
+		$datats->rate = $this->input->post('inputQuote');
+		$datats->systemquote = $this->input->post('inputSystemQuote');
 		$datats->save();
 		//echo $this->db->last_query();
 		redirect('/data');

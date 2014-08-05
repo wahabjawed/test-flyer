@@ -86,4 +86,20 @@ class MY_Model extends CI_Model {
         }
         return $ret_val;
     }
+	
+	
+	   public function search($where) {
+        
+		$this->db->or_like($where);
+        $query = $this->db->get($this::DB_TABLE);
+        
+        $ret_val = array();
+        $class = get_class($this);
+        foreach ($query->result() as $row) {
+            $model = new $class;
+            $model->populate($row);
+            $ret_val[$row->{$this::DB_TABLE_PK}] = $model;
+        }
+        return $ret_val;
+    }
 }
