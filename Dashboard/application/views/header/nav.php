@@ -1,5 +1,7 @@
 <div class='masthead'>
-   <center> <h2 class='text-muted'>MX LEADS - Administrative Panel</h2></center>
+   <center><img class="img-responsive" src="<?php echo base_url('img/logo.png')?>"/> <h2 class='text-muted'>MX LEADS - Administrative Panel</h2>
+   <h5 class='text-muted'>a company that thinks outside the box</h5>
+   </center>
 <div >
     <nav id='myNavbar' class='navbar navbar-default' role='navigation'>
         <!-- Brand and toggle get grouped for better mobile display -->

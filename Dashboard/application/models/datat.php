@@ -19,4 +19,5 @@ class DataT extends MY_Model {
 	public $datauserid;
     public $rate;
 	public $systemquote;
+	public $status;
 }

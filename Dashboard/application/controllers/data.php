@@ -41,6 +41,7 @@ class Data extends CI_Controller {
 				$data->systemquote,
 				$data->cdate,
 				$user->username,
+				$data->status,
 					anchor('data/update/'.$data->data_id,'Update')." ".anchor('data/delete/'.$data->data_id,'Delete', array('onClick' => "return deleteConfirm($data->data_id);"))
             );
         }

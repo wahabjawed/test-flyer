@@ -41,7 +41,7 @@ function resets(){
 	   $tmpl = array ( 'table_open'  => '<table class="table table-bordered">' );
 
 $this->table->set_template($tmpl);
-       $this->table->set_heading('#', 'Name', 'Tel', 'Address','City','Zip Code','Email','Interest','System','Rate','SystemQ','Next Date','User','Action');
+       $this->table->set_heading('#', 'Name', 'Tel', 'Address','City','Zip Code','Email','Interest','System','Rate','SystemQ','Next Date','User','Status','Action');
 echo $this->table->generate($data);
        ?>
          </form>
